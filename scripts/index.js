@@ -74,10 +74,10 @@ var Utility = (function() {
 	};
 
 	WikipediaApp.prototype.handleResponse = function(data) {
-		var data1 = data.query.pages;
-		var temp = [];
+		const data1 = data.query.pages;
+		let temp = [];
 
-		for (var key in data1) {
+		for (const key in data1) {
 			(function(i) {
 				let thumbnail = '';
 				const thumb = data1[key].thumbnail;
@@ -99,9 +99,6 @@ var Utility = (function() {
 		this.content.find('.list-container').html(temp);
 	};
 
-	window.WikipediaApp = WikipediaApp;
-})();
-
-(function() {
 	new WikipediaApp($('.search-wrapper'), $('.content-wrapper'));
 })();
+
